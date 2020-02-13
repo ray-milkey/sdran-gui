@@ -14,5 +14,5 @@ jobs:
   include:
     - stage: tests
       script:
-        - make help
+        - make
     
