@@ -1,5 +1,9 @@
 sudo: false
 
+language: node_js
+node_js:
+  - '8'
+
 services:
   - docker
 
@@ -9,6 +13,9 @@ notifications:
 branches:
   only:
     - master
+
+install:
+  - npm install
 
 jobs:
   include:
