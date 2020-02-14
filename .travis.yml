@@ -21,5 +21,5 @@ jobs:
   include:
     - stage: tests
       script:
-        - make license_check protos build-gui
+        - make license_check build-gui
     
