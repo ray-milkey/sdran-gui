@@ -35,6 +35,11 @@ before_script:
 jobs:
   include:
     - stage: tests
+      if: type == pull_request ||  fork == false
       script:
         - make test
-        - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./build/bin/push-images; fi'
+
+    - stage: release
+      if: type != pull_request && fork == false
+      script:
+        - bash ./build/bin/push-images
